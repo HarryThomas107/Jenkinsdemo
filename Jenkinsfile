@@ -9,19 +9,19 @@ pipeline {
         stage('Clone Code') {
             steps {
                 git branch: 'main',
-                    url: 'https://github.com/MamthaKSunilkumar/CS8_demo.git'
+                    url: 'https://github.com/HarryThomas107/Jenkinsdemo.git'
             }
         }
 
         stage('Install Dependencies') {
             steps {
-                sh 'npm install'
+                bat 'npm install'
             }
         }
 
         stage('Build React App') {
             steps {
-                sh 'npm run build'
+                bat 'npm run build'
             }
         }
     }
