@@ -1,12 +1,18 @@
 pipeline {
     agent any
 
-
     stages {
         stage('Clone Code') {
             steps {
                 git branch: 'main',
                     url: 'https://github.com/HarryThomas107/Jenkinsdemo.git'
+            }
+        }
+
+        stage('Check Node') {
+            steps {
+                bat 'node -v || echo Node not found'
+                bat 'npm -v || echo NPM not found'
             }
         }
 
